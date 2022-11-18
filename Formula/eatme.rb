@@ -5,13 +5,13 @@
 class Eatme < Formula
   desc ""
   homepage "https://github.com/kulapard/go-eatme"
-  version "0.1.7"
+  version "0.1.8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.7/go-eatme_0.1.7_Darwin_arm64.tar.gz"
-      sha256 "058487611b65f223e4f8bd567a463a6dfe8e609ae17c49651cbdab024b2cff14"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.8/go-eatme_0.1.8_Darwin_arm64.tar.gz"
+      sha256 "75dbfdc1bbaee462cabdb513ec7ccdda59d79a9d2a3a2ffaad56a33de205b9a4"
 
       def install
         bin.install "eatme"
@@ -21,8 +21,8 @@ class Eatme < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.7/go-eatme_0.1.7_Linux_arm64.tar.gz"
-      sha256 "897f5e4264ab5f24352500ca6a826dfd1a5c6ab17faa5e8e086893d4a7d928b2"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.8/go-eatme_0.1.8_Linux_arm64.tar.gz"
+      sha256 "8a6fdcb41bf2a093d18d3f7fc76d04e7a0a3f68dce7456c3a3c31988fbf1af26"
 
       def install
         bin.install "eatme"
