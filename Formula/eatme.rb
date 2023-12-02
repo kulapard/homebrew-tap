@@ -5,13 +5,13 @@
 class Eatme < Formula
   desc "Simple tool to manage multiple git/hg repositories at once. It goes through all subdirectories recursively and concurrently execute specified command in all af them."
   homepage "https://github.com/kulapard/go-eatme"
-  version "0.1.19"
+  version "0.1.20"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.19/go-eatme_0.1.19_darwin_arm64.tar.gz"
-      sha256 "ed934b74adc53d4047b8ecf2bd9ac6e62e87547b4606f15ab4495ec1781bf26e"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.20/go-eatme_0.1.20_darwin_arm64.tar.gz"
+      sha256 "b4169fe86e31dfca55c32f179757917a06b920f1739c182d454d9056189e0042"
 
       def install
         bin.install "eatme"
@@ -21,8 +21,8 @@ class Eatme < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.19/go-eatme_0.1.19_linux_arm64.tar.gz"
-      sha256 "ef084846a1254e87f5ce7adca947a64cfbd8b949c4797c9f5e5f935091960537"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.20/go-eatme_0.1.20_linux_arm64.tar.gz"
+      sha256 "136ee0d3234d78d9aba510ec1c01be0461c1354f6ac3f76eaa36f769fe96e9d6"
 
       def install
         bin.install "eatme"
