@@ -5,21 +5,21 @@
 class Gol < Formula
   desc "Terminal version of Conway's Game of Life written in Go"
   homepage "https://github.com/kulapard/gol"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kulapard/gol/releases/download/v0.0.2/gol_Darwin_arm64.tar.gz"
-      sha256 "328a6b85ea06e1addb114ee87f617cf4b7822da7e38712ff685eb5b9250de92d"
+    if Hardware::CPU.intel?
+      url "https://github.com/kulapard/gol/releases/download/v0.0.3/gol_Darwin_x86_64.tar.gz"
+      sha256 "69d1333af8cddf04b9050043a23ab5dff2c8e20284ca716de001af84807c6069"
 
       def install
         bin.install "gol"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kulapard/gol/releases/download/v0.0.2/gol_Darwin_x86_64.tar.gz"
-      sha256 "f2aff864854d5bc1a304f360eac6175cb592f00c268eda464dec20617de60bba"
+    if Hardware::CPU.arm?
+      url "https://github.com/kulapard/gol/releases/download/v0.0.3/gol_Darwin_arm64.tar.gz"
+      sha256 "96be3d4fe37333380b849cd7f1140be37da4f45656b4edf774c2eb05f508ace3"
 
       def install
         bin.install "gol"
@@ -29,16 +29,16 @@ class Gol < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kulapard/gol/releases/download/v0.0.2/gol_Linux_arm64.tar.gz"
-      sha256 "ecb8cf7f4b982ea811a8c0824e229624d2b26442176836160a90bdd59cfa09f6"
+      url "https://github.com/kulapard/gol/releases/download/v0.0.3/gol_Linux_arm64.tar.gz"
+      sha256 "cc0e80a162d1db6134269680cabf6a7a1cd9e8b22d462bd89d4f1c258244b732"
 
       def install
         bin.install "gol"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kulapard/gol/releases/download/v0.0.2/gol_Linux_x86_64.tar.gz"
-      sha256 "b943c84dc57bff2e00e383ec42455dd1087702a9b1f0983513f32f54aa3da3b0"
+      url "https://github.com/kulapard/gol/releases/download/v0.0.3/gol_Linux_x86_64.tar.gz"
+      sha256 "d75e6c0de2bf39c7f59f3239b9e2dfc8c1137cc4fc4a2ae3982e750736b5ab73"
 
       def install
         bin.install "gol"
