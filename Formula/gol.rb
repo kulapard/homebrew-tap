@@ -5,21 +5,21 @@
 class Gol < Formula
   desc "Terminal version of Conway's Game of Life written in Go"
   homepage "https://github.com/kulapard/gol"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kulapard/gol/releases/download/v0.1.4/gol_Darwin_arm64.tar.gz"
-      sha256 "8a6880e27a44825ab02b1e2085eb7e5c4303c361ea7768989950fc9287e63007"
+    if Hardware::CPU.intel?
+      url "https://github.com/kulapard/gol/releases/download/v0.1.5/gol_Darwin_x86_64.tar.gz"
+      sha256 "61e2e13e40098847afd6f0ef5c781a15e0ebf7d68375b6ff395562ce7f7d17a6"
 
       def install
         bin.install "gol"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kulapard/gol/releases/download/v0.1.4/gol_Darwin_x86_64.tar.gz"
-      sha256 "3b9fac4384e03ae1b248f30814b38703357469d2cfd2aef59efa573a5c48fbdf"
+    if Hardware::CPU.arm?
+      url "https://github.com/kulapard/gol/releases/download/v0.1.5/gol_Darwin_arm64.tar.gz"
+      sha256 "6447b8c4c4a6af51c99f3c0dee8b7c9e3e592c98d8111d1d6da9628483c5b807"
 
       def install
         bin.install "gol"
@@ -28,17 +28,25 @@ class Gol < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/kulapard/gol/releases/download/v0.1.5/gol_Linux_armv6.tar.gz"
+      sha256 "0ee07fcce68221a2a72c6720845909b1176e67924acb98439e83bc7b31289faf"
+
+      def install
+        bin.install "gol"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kulapard/gol/releases/download/v0.1.4/gol_Linux_arm64.tar.gz"
-      sha256 "6f24595bdb08ce59876a84594721360844a5c646a79450cc4b740edea46264f7"
+      url "https://github.com/kulapard/gol/releases/download/v0.1.5/gol_Linux_arm64.tar.gz"
+      sha256 "80b92b17b33f64b2eb343749b1c3dfe599d95f1527b51f9bf333efd9eec0edc8"
 
       def install
         bin.install "gol"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kulapard/gol/releases/download/v0.1.4/gol_Linux_x86_64.tar.gz"
-      sha256 "fdefab83e9cd50384fe92bf322ad361447fb25a667d68f9546f3e820b1c2d21a"
+      url "https://github.com/kulapard/gol/releases/download/v0.1.5/gol_Linux_x86_64.tar.gz"
+      sha256 "0ba49ef1deee37b478948afac4e84a48b0c70884b51990032165cd32e172de97"
 
       def install
         bin.install "gol"
