@@ -5,13 +5,21 @@
 class Eatme < Formula
   desc "Simple tool to manage multiple git/hg repositories at once. It goes through all subdirectories recursively and concurrently execute specified command in all af them."
   homepage "https://github.com/kulapard/go-eatme"
-  version "0.1.22"
+  version "0.1.24"
   license "MIT"
 
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.24/go-eatme_Darwin_x86_64.tar.gz"
+      sha256 "1f0fced71c3a60f876e055b3f914c5ee285e5194ef2729c14b7c49d983114b27"
+
+      def install
+        bin.install "eatme"
+      end
+    end
     if Hardware::CPU.arm?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.22/go-eatme_0.1.22_darwin_arm64.tar.gz"
-      sha256 "12bf2306fcf6da33e701c1196c8bc819113074f3aca06d5e976d0b0c9c5fc9c6"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.24/go-eatme_Darwin_arm64.tar.gz"
+      sha256 "bd8ca101a0b14f42d05a9704af6d1f8225416687d7968b4ae9bcddc86584ba2d"
 
       def install
         bin.install "eatme"
@@ -20,9 +28,25 @@ class Eatme < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.24/go-eatme_Linux_armv6.tar.gz"
+      sha256 "a8174051beff78801333baebdc757d0be1baa3c7d5fd94c1015481ddb32bf088"
+
+      def install
+        bin.install "eatme"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.22/go-eatme_0.1.22_linux_arm64.tar.gz"
-      sha256 "8551157eed6f9ccf487bd246f3cae8d66c0474514b084d772342c9a06af95fd2"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.24/go-eatme_Linux_arm64.tar.gz"
+      sha256 "8f9ed667313030f89d16f475af64684103409194fb1eabefe37d5473b0ea697c"
+
+      def install
+        bin.install "eatme"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.24/go-eatme_Linux_x86_64.tar.gz"
+      sha256 "bf89c6dc2e91f893b16a722c06d55113bf7eb616cf068993764dbce29475173e"
 
       def install
         bin.install "eatme"
