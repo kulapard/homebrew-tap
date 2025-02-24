@@ -5,21 +5,21 @@
 class Eatme < Formula
   desc "Simple tool to manage multiple git/hg repositories at once. It goes through all subdirectories recursively and concurrently execute specified command in all af them."
   homepage "https://github.com/kulapard/go-eatme"
-  version "0.1.35"
+  version "0.1.36"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.35/go-eatme_v0.1.35_macos_x86_64.tar.gz"
-      sha256 "e6a85f3b3ed36b37da60dd4dc9209553a9c1e8a7875c6988785e0ef855a71f37"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.36/go-eatme_v0.1.36_macos_x86_64.tar.gz"
+      sha256 "7d4e4e0f9ec3b9768b0cb37ed2eaca66c06558d50eb7acdeea716a31d7539d53"
 
       def install
         bin.install "eatme"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.35/go-eatme_v0.1.35_macos_arm64.tar.gz"
-      sha256 "2ec50324f784035afdcefe03037f10b9aa4dffdaf267daa189816db976364d03"
+      url "https://github.com/kulapard/go-eatme/releases/download/v0.1.36/go-eatme_v0.1.36_macos_arm64.tar.gz"
+      sha256 "8a963f6dbbfdb2347d47895f2188e75f644775c4e0d4666dc2933deb1183b84b"
 
       def install
         bin.install "eatme"
@@ -30,8 +30,8 @@ class Eatme < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.35/go-eatme_v0.1.35_linux_x86_64.tar.gz"
-        sha256 "1d9fb945628ccb60f7c8b0e438d06a0635ac85b5f0f685b6e8b3aec2505d2bc1"
+        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.36/go-eatme_v0.1.36_linux_x86_64.tar.gz"
+        sha256 "f69a793b12dc1aa2ebf4ac2f107781bfe931f949b1c98a0933700ff462f35677"
 
         def install
           bin.install "eatme"
@@ -40,8 +40,8 @@ class Eatme < Formula
     end
     if Hardware::CPU.arm?
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.35/go-eatme_v0.1.35_linux_arm.tar.gz"
-        sha256 "6546968f5439ecd9c8a039c9f82d6700a0f0a486fc1017509a234a8f77bc8c39"
+        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.36/go-eatme_v0.1.36_linux_arm.tar.gz"
+        sha256 "5eee52a4c869b8c0c3463fca104024ae48006a4c11a9001fbf21a4a0bec48b67"
 
         def install
           bin.install "eatme"
@@ -50,8 +50,8 @@ class Eatme < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.35/go-eatme_v0.1.35_linux_arm64.tar.gz"
-        sha256 "c10ffaddeec82ffdee31cd619f00e57a61cbf02f62b4efa7374f847992000850"
+        url "https://github.com/kulapard/go-eatme/releases/download/v0.1.36/go-eatme_v0.1.36_linux_arm64.tar.gz"
+        sha256 "983a096877a3cacb02cce6e3caa94667719aeb6aa844697b94d3c0d327730aa4"
 
         def install
           bin.install "eatme"
