@@ -6,25 +6,25 @@ cask "eatme" do
     end
   end
 
-  version "0.1.39"
+  version "0.1.40"
 
   on_macos do
     on_arm do
-      sha256 "33d1b75a45ef7f7347ea056ade963c6e952ae9109f1c05e3a99ceaa444d450c6"
+      sha256 "d38232345396525ba1d74e53a5afecd1fe2099621167bcba1353a9ce67bdb808"
       url "https://github.com/kulapard/go-eatme/releases/download/v#{version}/go-eatme_v#{version}_macos_arm64.tar.gz"
     end
     on_intel do
-      sha256 "b43d7a52e653480fa03848b34534233eb544076f7847d62ab909c3ca24dde410"
+      sha256 "d91f4964472c7e51f3de13d0b6f7f0c38223d43ebefff8ce162c9d71c8615c13"
       url "https://github.com/kulapard/go-eatme/releases/download/v#{version}/go-eatme_v#{version}_macos_x86_64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "0a0590cc790e8e8a38b090ce6b843d28614ee50e85343c4207974410e8f6f7f8"
+      sha256 "205baaf10b79ff7ab4ea010a77fc296075cca259ed962b225c62e45a01b59057"
       url "https://github.com/kulapard/go-eatme/releases/download/v#{version}/go-eatme_v#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "58c8039690918dbc21155f79b631a78d020a03d7d19295c4944e856cb92fd8cd"
+      sha256 "a8194246aaab561303456a0fc1b1d9101c3c1aa5662a61c694565cafeba7994d"
       url "https://github.com/kulapard/go-eatme/releases/download/v#{version}/go-eatme_v#{version}_linux_x86_64.tar.gz"
     end
   end
@@ -39,5 +39,5 @@ cask "eatme" do
 
   binary "eatme"
 
-  # No zap stanza required
+  zap :not_required
 end
